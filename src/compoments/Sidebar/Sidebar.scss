@@ -1,0 +1,59 @@
+@import "./src/scss/variable";
+.sidebar{
+  font-size: 1rem;
+  display:inline-block;
+  width: 18rem;
+  height: calc(100vh - 90px);
+  background: $--sidebar-bg;
+  z-index: 100;
+
+  .sidebar__divide{
+    position:relative;
+  }
+  .sidebar__divide:after {
+    content: "";
+    position: absolute;
+    border-top: 1px solid $--navigation-text;
+    width:inherit;
+    top: .5rem;
+    right: 3rem;
+    left: 3rem;
+  }
+
+
+  .navbar{
+
+    .navbar__brand{
+      padding: 1.5rem 4rem 0 1.5rem;
+    }
+    .navbar__logo{
+      margin: 0 auto;
+      width:120px;
+      height:40px;
+      background: $--img-logo-mp3 50%/contain no-repeat;
+    }
+    .navbar__menu{
+      padding-top:1rem;
+    }
+    .navbar__item{
+      padding: .8rem 4rem .8rem 4rem;
+      a{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        column-gap: .5rem;
+        color: $--navigation-text;
+        span{
+          font-size: 13px;
+          font-weight: 700;
+        }
+      }
+      a:hover{
+        color: #fff;
+      }
+      .icon{
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
