@@ -1,14 +1,18 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-function Item(props: any): any {
+import React from "react";
+import {navItemProps} from "../../ultils/types";
+
+const Item: React.FC<navItemProps> = ({title,icon}) => {
     return (
         <li className="navbar__item">
-            <a title={props.title}>
-                {props.icon}
+            <a title={title}>
+                {icon}
                 <span>
-                    {props.title}
+                    {title}
                 </span>
             </a>
+
+
         </li>
     )
 }
-export default Item;
+export default Item

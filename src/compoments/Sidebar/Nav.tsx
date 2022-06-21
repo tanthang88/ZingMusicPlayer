@@ -1,7 +1,5 @@
-import { ReactElement, JSXElementConstructor, ReactFragment, ReactPortal } from "react"
-
-function Nav(props: { children: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined }) {
-    console.log(props)
+import React from "react"
+const Nav: (props: any) => (JSX.Element| React.DetailedHTMLProps<any, any>) = (props:any) => {
     return (
         <nav className="navbar">
             {props.children}
