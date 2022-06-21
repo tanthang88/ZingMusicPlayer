@@ -1,7 +1,7 @@
 import axiosClient from "./axiosClient";
 
 const ZingAPI = {
-    getSong(params){
+    getSong(params: any){
         const url = '/api/song'
         return axiosClient.get(url, {params})
     }
