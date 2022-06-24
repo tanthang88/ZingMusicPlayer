@@ -1,18 +1,28 @@
 import React from "react";
 import {navItemProps} from "../../ultils/types";
+import {NavLink} from "react-router-dom";
+import clsx from "clsx";
 
-const Item: React.FC<navItemProps> = ({title,icon}) => {
+const Item: React.FC<navItemProps> = ({
+    path,
+    title,
+    icon,
+    defaultItemActive,
+}): JSX.Element => {
+    let activeClassName = "active";
     return (
-        <li className="navbar__item">
-            <a title={title}>
+        <li className={clsx("navbar__item")} title={title}>
+            <NavLink
+                to={path}
+                className={({isActive}) =>
+                    isActive
+                        ? "item__content " + activeClassName
+                        : "item__content"
+                }>
                 {icon}
-                <span>
-                    {title}
-                </span>
-            </a>
-
-
+                {title}
+            </NavLink>
         </li>
-    )
-}
-export default Item
+    );
+};
+export default Item;
