@@ -1,11 +1,18 @@
-$--layout-bg: #282828;
-$--primary-bg: #3d3d3d;
-$--text-primary: #fff;
-$--sidebar-bg: hsla(0,0%,100%,0.05);
-$--navigation-text: #a0a0a0;
+:root{
+  --layout-bg: #282828;
+  --primary-bg: #3d3d3d;
+  --text-primary: #fff;
+  --sidebar-bg: hsla(0,0%,100%,0.05);
+  --alpha-bg: hsla(0,0%,100%,0.1);
+  --banner-vip-bg: linear-gradient(117deg,#5a4be7,#c86dd7 102%);
+  --navigation-text: #a0a0a0;
+  --purple-primary: #7200a1;
 
 
 
+  --img-logo-mp3: url("https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/backgrounds/logo-dark.svg");
+  --bg-img-eiffel: url("https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/theme-background/eiffel.jpg");
+}
 
-$--img-logo-mp3: url("https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/backgrounds/logo-dark.svg");
-$--bg-img-eiffel: url("https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/theme-background/eiffel.jpg");
+
+

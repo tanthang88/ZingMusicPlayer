@@ -1,66 +1,143 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
-
-import Nav from "./Nav"
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {solid} from "@fortawesome/fontawesome-svg-core/import.macro";
+import React from "react";
+import Nav from "./Nav";
 import SidebarLogo from "./Logo";
-import Item from './Item'
+import Item from "./Item";
+import Banner from "./Banner";
 import "./Sidebar.scss";
 
-
-function Sidebar() {
+const Sidebar: React.FC = (): JSX.Element => {
     return (
         <aside className="sidebar">
             <div className="sidebar__wrapper">
                 <Nav>
-                    <SidebarLogo/>
+                    <SidebarLogo />
                 </Nav>
                 <Nav>
                     <ul className="navbar__menu">
                         <Item
+                            path="/"
                             title="Trang Chủ"
-                            icon={<FontAwesomeIcon className="icon" icon={solid('user')}/>}
+                            defaultItemActive={true}
+                            icon={
+                                <FontAwesomeIcon
+                                    className="icon"
+                                    icon={solid("user")}
+                                />
+                            }
                         />
+
                         <Item
+                            path="/abc"
                             title="Khám Phá"
-                            icon={<FontAwesomeIcon className="icon" icon={solid('circle-dot')}/>}
+                            defaultItemActive={false}
+                            icon={
+                                <FontAwesomeIcon
+                                    className="icon"
+                                    icon={solid("circle-dot")}
+                                />
+                            }
                         />
                         <Item
+                            path="/d"
                             title="#zingchart"
-                            icon={<FontAwesomeIcon className="icon" icon={solid('chart-line')}/>}
+                            defaultItemActive={false}
+                            icon={
+                                <FontAwesomeIcon
+                                    className="icon"
+                                    icon={solid("chart-line")}
+                                />
+                            }
                         />
                         <Item
+                            path="/e"
                             title="Radio"
-                            icon={<FontAwesomeIcon className="icon" icon={solid('radio')}/>}
+                            defaultItemActive={false}
+                            icon={
+                                <FontAwesomeIcon
+                                    className="icon"
+                                    icon={solid("radio")}
+                                />
+                            }
                         />
                         <Item
+                            path="/f"
                             title="Theo Dõi"
-                            icon={<FontAwesomeIcon className="icon" icon={solid('table-list')}/>}
+                            defaultItemActive={false}
+                            icon={
+                                <FontAwesomeIcon
+                                    className="icon"
+                                    icon={solid("table-list")}
+                                />
+                            }
                         />
                     </ul>
                 </Nav>
-                <div className="sidebar__divide"/>
+                <div className="sidebar__divide" />
                 <Nav>
                     <ul className="navbar__menu navbar__menu--bottom">
                         <Item
+                            path="/qqqq"
                             title="Nhạc Mới"
-                            icon={<FontAwesomeIcon className="icon" icon={solid('music')}/>}
+                            defaultItemActive={false}
+                            icon={
+                                <FontAwesomeIcon
+                                    className="icon"
+                                    icon={solid("music")}
+                                />
+                            }
                         />
                         <Item
+                            path="/www"
                             title="Thể Loại"
-                            icon={<FontAwesomeIcon className="icon" icon={solid('bars-staggered')}/>}
+                            defaultItemActive={false}
+                            icon={
+                                <FontAwesomeIcon
+                                    className="icon"
+                                    icon={solid("bars-staggered")}
+                                />
+                            }
                         />
                         <Item
+                            path="/eee"
                             title="Top 100"
-                            icon={<FontAwesomeIcon className="icon" icon={solid('star')}/>}
+                            defaultItemActive={false}
+                            icon={
+                                <FontAwesomeIcon
+                                    className="icon"
+                                    icon={solid("star")}
+                                />
+                            }
                         />
                         <Item
+                            path="/aaaaa"
                             title="MV"
-                            icon={<FontAwesomeIcon className="icon" icon={solid('clapperboard')}/>}
+                            defaultItemActive={false}
+                            icon={
+                                <FontAwesomeIcon
+                                    className="icon"
+                                    icon={solid("clapperboard")}
+                                />
+                            }
                         />
                     </ul>
                 </Nav>
+                <Nav>
+                    <Banner
+                        bannerTitle="Đăng nhập để khám phá playlist dành riêng cho bạn"
+                        href="#"
+                        btnTitle="đăng nhập"
+                    />
+                    <Banner
+                        bannerTitle="Nghe nhạc không quảng cáo cùng kho nhạc VIP"
+                        href="#"
+                        btnTitle="nâng cấp vip"
+                        btnIsVip={true}
+                    />
+                </Nav>
             </div>
         </aside>
-    )
-}
-export default Sidebar
+    );
+};
+export default Sidebar;
