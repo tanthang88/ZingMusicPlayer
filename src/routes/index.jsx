@@ -1,8 +1,9 @@
 import React from "react";
-import {Route, Routes} from "react-router-dom";
-import {About, Home} from "../compoments/Test/test";
+import {Routes, Route} from "react-router-dom";
+import {About} from "../compoments/Test/test";
+import Home from "../pages/Home";
 
-const Router: React.FC = (): JSX.Element => {
+function Router() {
     return (
         <>
             <Routes>
@@ -14,5 +15,5 @@ const Router: React.FC = (): JSX.Element => {
             </Routes>
         </>
     );
-};
+}
 export default Router;

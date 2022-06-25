@@ -1,0 +1,25 @@
+@import "./src/scss/variable";
+.slider__container {
+    display: flex;
+    align-items: center;
+    .slider__homepage {
+        width: 75vw;
+        height: 16.5rem;
+        .slider__wrapper {
+            max-width: 100%;
+            position: relative;
+            .slider__image {
+                position: absolute;
+                border-radius: 20px;
+                figure {
+                    height: 0;
+                }
+                img {
+                    border-radius: 8px;
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
