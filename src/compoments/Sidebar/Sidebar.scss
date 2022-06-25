@@ -4,7 +4,7 @@
   .sidebar__wrapper {
     font-size: 1rem;
     display: inline-block;
-    width: 18rem;
+    width: calc(100vw - 85vw);
     height: calc(100vh - 90px);
     background: var(--sidebar-bg);
     z-index: 100;

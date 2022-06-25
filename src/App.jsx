@@ -1,8 +1,8 @@
 import React from "react";
 import Sidebar from "./compoments/Sidebar/Sidebar";
-import Router from "./routes";
+import Router from "./routes/index";
 
-const App: React.FC = () => {
+function App() {
     return (
         <div className="App">
             {/*Hiển thị sidebar trên tất cả các trang*/}
@@ -11,6 +11,6 @@ const App: React.FC = () => {
             <Router />
         </div>
     );
-};
+}
 
 export default App;

@@ -1,25 +1,30 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {solid} from "@fortawesome/fontawesome-svg-core/import.macro";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Nav from "./Nav";
 import SidebarLogo from "./Logo";
 import Item from "./Item";
 import Banner from "./Banner";
 import "./Sidebar.scss";
 
-const Sidebar: React.FC = (): JSX.Element => {
+function Sidebar() {
+    const [isLoading, setLoading] = useState(true);
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false);
+        }, 500);
+    }, []);
     return (
         <aside className="sidebar">
             <div className="sidebar__wrapper">
-                <Nav>
+                <Nav isLoading={isLoading} height={65} count={1}>
                     <SidebarLogo />
                 </Nav>
-                <Nav>
+                <Nav isLoading={isLoading} height={50} count={5}>
                     <ul className="navbar__menu">
                         <Item
                             path="/"
                             title="Trang Chủ"
-                            defaultItemActive={true}
                             icon={
                                 <FontAwesomeIcon
                                     className="icon"
@@ -31,7 +36,6 @@ const Sidebar: React.FC = (): JSX.Element => {
                         <Item
                             path="/abc"
                             title="Khám Phá"
-                            defaultItemActive={false}
                             icon={
                                 <FontAwesomeIcon
                                     className="icon"
@@ -42,7 +46,6 @@ const Sidebar: React.FC = (): JSX.Element => {
                         <Item
                             path="/d"
                             title="#zingchart"
-                            defaultItemActive={false}
                             icon={
                                 <FontAwesomeIcon
                                     className="icon"
@@ -53,7 +56,6 @@ const Sidebar: React.FC = (): JSX.Element => {
                         <Item
                             path="/e"
                             title="Radio"
-                            defaultItemActive={false}
                             icon={
                                 <FontAwesomeIcon
                                     className="icon"
@@ -64,7 +66,6 @@ const Sidebar: React.FC = (): JSX.Element => {
                         <Item
                             path="/f"
                             title="Theo Dõi"
-                            defaultItemActive={false}
                             icon={
                                 <FontAwesomeIcon
                                     className="icon"
@@ -75,12 +76,11 @@ const Sidebar: React.FC = (): JSX.Element => {
                     </ul>
                 </Nav>
                 <div className="sidebar__divide" />
-                <Nav>
+                <Nav isLoading={isLoading} height={50} count={4}>
                     <ul className="navbar__menu navbar__menu--bottom">
                         <Item
                             path="/qqqq"
                             title="Nhạc Mới"
-                            defaultItemActive={false}
                             icon={
                                 <FontAwesomeIcon
                                     className="icon"
@@ -91,7 +91,6 @@ const Sidebar: React.FC = (): JSX.Element => {
                         <Item
                             path="/www"
                             title="Thể Loại"
-                            defaultItemActive={false}
                             icon={
                                 <FontAwesomeIcon
                                     className="icon"
@@ -102,7 +101,6 @@ const Sidebar: React.FC = (): JSX.Element => {
                         <Item
                             path="/eee"
                             title="Top 100"
-                            defaultItemActive={false}
                             icon={
                                 <FontAwesomeIcon
                                     className="icon"
@@ -113,7 +111,6 @@ const Sidebar: React.FC = (): JSX.Element => {
                         <Item
                             path="/aaaaa"
                             title="MV"
-                            defaultItemActive={false}
                             icon={
                                 <FontAwesomeIcon
                                     className="icon"
@@ -123,7 +120,7 @@ const Sidebar: React.FC = (): JSX.Element => {
                         />
                     </ul>
                 </Nav>
-                <Nav>
+                <Nav isLoading={isLoading} height={120} count={2}>
                     <Banner
                         bannerTitle="Đăng nhập để khám phá playlist dành riêng cho bạn"
                         href="#"
@@ -139,5 +136,5 @@ const Sidebar: React.FC = (): JSX.Element => {
             </div>
         </aside>
     );
-};
+}
 export default Sidebar;
